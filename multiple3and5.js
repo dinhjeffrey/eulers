@@ -9,7 +9,7 @@
 			console.log(i, ", ");
 			multiple3 += i;
 		}
-		if ((i % 5) == 0)
+		else if ((i % 5) == 0)
 		{
 			console.log(i, ", ");
 			multiple5 += i;
