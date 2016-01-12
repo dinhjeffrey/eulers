@@ -20,8 +20,7 @@
 	// console.log("Total is : " + total)
 
 
-	 console.log(Array.apply(null, Array(1000)).map(function (_, i) 
-	 {return i+1}).filter(function(val) 
+	 console.log(Array.apply(null, Array(1000)).map(function (_, i) {return i+1}).filter(function(val) 
 	{ return val % 3 == 0 || val % 5 == 0 }).reduce(function(a, b) { return a+b }, 0))
 
 // console.log(Array.apply(null, Array(1000)).map(function (_, i) {return i+1}))
