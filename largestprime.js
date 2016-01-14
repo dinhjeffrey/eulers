@@ -32,7 +32,7 @@ var i=2;
 	    if (n % i == 0) // 600851475143 / 2 == 0
 	    {
 	        n /= i; // n = 600851475143 / 2 (not 2 but any number that divides wholely into n, first is 600851475143)   
-	    } else {
+	    } else { // doesn't increase if i wholely divides into n
 	        i++;
 	    }
 	    console.log("i is", i, ': n is', n);
