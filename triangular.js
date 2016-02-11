@@ -32,7 +32,7 @@ function divisors(unknown){ // unknown triangular number
 function addTriangular(){
 	var j=1; // j is the sum of triangle numbers
 	var k=1; // k keeps count of 1 + 1 + 1 .... 1 + 1
-	while(divisors(j)<5){
+	while(divisors(j)<500){
 		for (var i=1, count=0; i*i<=j; i++){ // 1 - unknown 
 			if (j % i === 0) { // if i evenly divides into unknown 
 				count++; // increase count of divisors by 1. we want count > 500, then return unknown
