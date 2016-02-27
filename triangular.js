@@ -17,33 +17,45 @@
 // We can see that 28 is the first triangle number to have over five divisors.
 
 // What is the value of the first triangle number to have over five hundred divisors?
+// 
+// 
+function numDivisors(n) {
+  var count = 0;
 
-function divisors(unknown){ // unknown triangular number 
-	
-	for (var i=1, count=0; i<=unknown; i++){ // 1 - unknown  
-		if (unknown % i === 0) { // if i evenly divides into unknown 
-			count++; // increase count of divisors by 1. we want count > 500, then return unknown
-		}
-	}
-	return count;
+  for (var i = 1; i <= Math.sqrt(n); i++)
+    if (n % i === 0) count += 2;
+    // ~ is Math.floor() negative.
+    // return count else return count - 1 for sqrt(n) edge pair. we want to minus 1 count because the sqrt(n) gives an additional count.
+    // indexOf gets the length 
+    // It is called the Ternary Operator.
+    // It has the form of: condition ? value-if-true : value-if-false
+    //  check for that edge case afterwards and subtract 1 (as the pair sqrt(n)-sqrt(n) only gives 1 number)
+  return (~Math.sqrt(n).toString().indexOf('.')) ? count : count - 1 ;
 }
 
+var i = 1, k = 1;
+while (numDivisors(k) <= 500) { i++; k += i; }
 
-function addTriangular(){
-	var j=1; // j is the sum of triangle numbers
-	var k=1; // k keeps count of 1 + 1 + 1 .... 1 + 1
-	while(divisors(j)<500){
-		for (var i=1, count=0; i*i<=j; i++){ // 1 - unknown 
-			if (j % i === 0) { // if i evenly divides into unknown 
-				count++; // increase count of divisors by 1. we want count > 500, then return unknown
-			}
-		}
-		k++; // 1+1 = 2 | 3
-		j+=k; // 1+2 = 3 | 3+3 = 6
-	}
-	return j;
-}
+console.log(k);
 
+// function divisors(unknown) { // unknown triangular number 
+
+//     for (var i = 1, count = 0; i * i <= unknown; i++) { // 1 - unknown.  
+//         if (unknown % i === 0) { // if i evenly divides into unknown 
+//             count++; // increase count of divisors by 1. we want count > 500, then return unknown.
+//         }
+//     }
+//     return count;
+// }
 
 
-console.log(addTriangular());
+// function addTriangular() {
+//     var j = 1; // j is the sum of triangle numbers
+//     var k = 1; // k keeps count of 1 + 1 + 1 .... 1 + 1
+//     while (divisors(j) < 500) {
+//         k++; // 1+1 = 2 | 3
+//         j += k; // 1+2 = 3 | 3+3 = 6
+//     }
+//     return j;
+// }
+// console.log(addTriangular());

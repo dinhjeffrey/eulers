@@ -6,14 +6,14 @@ function isPrime(n)
 {
 	if(n < 2) return false;
 	else if (n == 2) return true;
-	else if(n % 2 == 0) return false;
+	else if (n % 2 === 0) return false;
 	else if (n < 9) return true;
-	else if (n % 3 == 0) return false;
+	else if (n % 3 === 0) return false;
 	max = (Math.sqrt(n+0.0)) + 1;
 	for (i = 5; i <= max; i +=6)
 	{
-		if (n % i == 0) return false;
-		if (n % (i + 2) == 0) return false;
+		if (n % i === 0) return false;
+		if (n % (i + 2) === 0) return false;
 	}
 	return true;
 }
@@ -25,7 +25,7 @@ j = 2; // don't use i, it will mess things up. use j instead.
 
 while (prime < 10001) 
 {
-	if (isPrime(j) == false)
+	if (isPrime(j) === false)
 	{
 		poop = "poop";
 	} else {

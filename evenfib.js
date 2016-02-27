@@ -7,7 +7,7 @@
 a = 1;
 b = 2;
 c = a + b; // 3
-eventotal = 2
+eventotal = 2;
 console.log(a);
 console.log(b);
 while (c <= 4000000)
@@ -16,7 +16,7 @@ while (c <= 4000000)
 	a = b; // a = 2
 	b = c; // b = 3
 	c = a + b; // c = 5
-	if ((c % 2) == 0)
+	if ((c % 2) === 0)
 	{
 		eventotal += c;
 	}
